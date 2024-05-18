@@ -4,7 +4,7 @@ import plotly.express as px
 from datetime import datetime
 
 # Customizing the page layout and title
-st.set_page_config(page_title='Smart Home Data Visualization', layout='wide')
+st.set_page_config(page_title='Smart Home Energy Management System', layout='wide')
 
 # Custom CSS to remove the white bar at the bottom
 st.markdown("""
