@@ -27,9 +27,8 @@ This application visualizes data from a Smart Home Energy Management System.
 Upload your dataset to get started.
 """)
 
-# Sidebar for file upload
-st.sidebar.title("Upload Data")
-uploaded_file = st.sidebar.file_uploader("Upload an Excel or CSV file", type=["xlsx", "xls", "csv"])
+# File upload section (moved out of the sidebar)
+uploaded_file = st.file_uploader("Upload an Excel or CSV file", type=["xlsx", "xls", "csv"])
 
 if uploaded_file:
     # Read the uploaded file
@@ -115,8 +114,10 @@ if uploaded_file:
         padding: 1rem;
         box-shadow: 0px -2px 10px rgba(0,0,0,0.1);
     }
+    </style>
+    <div class="footer">
+        Developed by [Nur Anim Binti Md Dud] | Powered by Streamlit
     </div>
     """, unsafe_allow_html=True)
 else:
     st.info("Awaiting file upload. Please upload an Excel or CSV file to proceed.")
-    
