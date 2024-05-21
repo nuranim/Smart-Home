@@ -21,7 +21,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # Title and description
-st.title('Summary of Smart Home Energy Management System')
+st.title('Smart Home Energy Management Summary')
 st.markdown("""
 This application visualizes data from a Smart Home Energy Management System. 
 Upload your dataset to get started.
