@@ -4,7 +4,7 @@ import plotly.express as px
 from datetime import datetime
 
 # Customizing the page layout and title
-st.set_page_config(page_title='Smart Home Energy Management System', layout='wide')
+st.set_page_config(page_title='Smart Home Data', layout='wide')
 
 # Custom CSS to remove the white bar at the bottom
 st.markdown("""
@@ -21,7 +21,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # Title and description
-st.title('Smart Home Data Visualization')
+st.title('Summary of Smart Home Energy Management System')
 st.markdown("""
 This application visualizes data from a Smart Home Energy Management System. 
 Upload your dataset to get started.
