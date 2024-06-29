@@ -78,27 +78,14 @@ if uploaded_file:
     
     # Visualization selection
     st.sidebar.title("Visualization")
-    vis_type = st.sidebar.selectbox("Select Visualization Type", ["Line Chart", "Bar Chart", "Scatter Plot"])
     
     # Select columns for visualization
     columns = filtered_df.columns.tolist()
-    x_axis = st.sidebar.selectbox("Select X-axis column", columns)
-    y_axis = st.sidebar.selectbox("Select Y-axis column", columns)
+    y_axis = st.sidebar.selectbox("Select Y-axis column", [col for col in columns if col != date_column])
     
-    if vis_type == "Line Chart":
-        st.write("### Line Chart")
-        fig = px.line(filtered_df, x=x_axis, y=y_axis, title=f"Line Chart of {y_axis} vs {x_axis}")
-        st.plotly_chart(fig)
-    
-    elif vis_type == "Bar Chart":
-        st.write("### Bar Chart")
-        fig = px.bar(filtered_df, x=x_axis, y=y_axis, title=f"Bar Chart of {y_axis} vs {x_axis}")
-        st.plotly_chart(fig)
-    
-    elif vis_type == "Scatter Plot":
-        st.write("### Scatter Plot")
-        fig = px.scatter(filtered_df, x=x_axis, y=y_axis, title=f"Scatter Plot of {y_axis} vs {x_axis}")
-        st.plotly_chart(fig)
+    st.write("### Line Chart")
+    fig = px.line(filtered_df, x=date_column, y=y_axis, title=f"Line Chart of {y_axis} over Time")
+    st.plotly_chart(fig)
 
     # Adding a footer with a customized message
     st.markdown("""
